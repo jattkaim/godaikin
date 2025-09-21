@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/godaikin"
+	"github.com/jattkaim/godaikin"
 )
 
 func main() {
