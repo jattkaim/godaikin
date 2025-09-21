@@ -1,4 +1,5 @@
 # GoDaikin
+**📝 Note:** This has been built with some Claude Sonnet 4.
 
 A Go library for controlling Daikin HVAC systems, ported from the Python [pydaikin](https://github.com/fredrike/pydaikin) library. This library provides a simple and efficient way to interact with Daikin air conditioning units over HTTP.
 
