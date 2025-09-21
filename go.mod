@@ -1,4 +1,4 @@
-module github.com/godaikin
+module github.com/jattkaim/godaikin
 
 go 1.21
 
