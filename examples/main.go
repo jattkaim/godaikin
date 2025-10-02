@@ -19,15 +19,13 @@ func main() {
 
 	var client *godaikin.DaikinClient
 
-	// Check if verbose logging is requested
 	verbose := len(os.Args) > 2 && os.Args[2] == "--verbose"
 
 	if verbose {
-		// Create client with verbose logging
 		logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
 			Level: slog.LevelDebug,
 		}))
-		client = godaikin.NewClientWithSlog(logger)
+		client = godaikin.NewClient(godaikin.WithLogger(logger))
 		fmt.Println("🔍 Verbose logging enabled")
 	} else {
 		// Create silent client (default)
