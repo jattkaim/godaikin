@@ -24,7 +24,7 @@ type Appliance interface {
 	GetTargetTemperature() (float64, error)
 
 	GetMode() string
-	GetPowerState() bool
+	GetPowerState() string
 	GetFanRate() string
 	GetFanDirection() string
 

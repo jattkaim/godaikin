@@ -877,11 +877,11 @@ func (d *DaikinBRP084) GetMode() string {
 }
 
 // GetPowerState returns whether device is powered on
-func (d *DaikinBRP084) GetPowerState() bool {
+func (d *DaikinBRP084) GetPowerState() string {
 	if pow, exists := d.Values.Get("pow"); exists {
-		return pow == "1"
+		return pow
 	}
-	return false
+	return "0"
 }
 
 // GetFanRate returns current fan rate
