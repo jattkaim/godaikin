@@ -105,22 +105,22 @@ func (b *BaseAppliance) GetTargetTemperature() (float64, error) {
 }
 
 func (b *BaseAppliance) GetMode() string {
-	// Check if device is powered off first
-	if pow, exists := b.Values.Get("pow"); exists && pow == "0" {
-		return "off"
-	}
+	// TODO remove if don't need power (atleast true for airbase)
+	// if pow, exists := b.Values.Get("pow"); exists && pow == "0" {
+	// 	return "off"
+	// }
 
 	if mode, exists := b.Values.Get("mode"); exists {
 		return b.translateValue("mode", mode)
 	}
-	return "unknown"
+	return "-1"
 }
 
-func (b *BaseAppliance) GetPowerState() bool {
+func (b *BaseAppliance) GetPowerState() string {
 	if pow, exists := b.Values.Get("pow"); exists {
-		return pow == "1"
+		return pow
 	}
-	return false
+	return "0"
 }
 
 func (b *BaseAppliance) GetFanRate() string {

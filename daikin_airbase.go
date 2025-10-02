@@ -175,8 +175,7 @@ func (d *DaikinAirBase) updateSettings(ctx context.Context, settings map[string]
 		daikinValue := d.reverseTranslateValue(key, value)
 		d.Values.Set(key, daikinValue)
 	}
-
-	// Handle special cases
+	// Handle special cases where mode is used to determine power state
 	if mode, exists := settings["mode"]; exists {
 		if mode == "off" {
 			d.Values.Set("pow", "0")
